@@ -24,8 +24,12 @@ jobs:
 
       - name: Validate forbidden secret-like files are not tracked
         run: |
-          forbidden_regex='(^|/)(\.env|\.env\..*|id_rsa|id_dsa|id_ed25519|.*\.pem)$'
-          if git ls-files | grep -E "$forbidden_regex"; then
+          tracked_env=$(git ls-files | grep -E '(^|/)\.env($|\.)' | grep -Ev '(^|/)\.env\.example$' || true)
+          tracked_keys=$(git ls-files | grep -E '(^|/)(id_rsa|id_dsa|id_ed25519|.*\.pem)$' || true)
+
+          if [ -n "$tracked_env" ] || [ -n "$tracked_keys" ]; then
+            echo "$tracked_env"
+            echo "$tracked_keys"
             echo "Forbidden secret-like files are tracked by git."
             exit 1
           fi
@@ -35,4 +39,3 @@ jobs:
           test -f .github/PULL_REQUEST_TEMPLATE.md
           test -f .github/ISSUE_TEMPLATE/bug_report.md
           test -f .github/ISSUE_TEMPLATE/feature_request.md
-
