@@ -80,3 +80,9 @@ Saida desta fase:
 1. Nomeacao final dos owners por story.
 2. Priorizacao final por onda (O1/O2/O3) se houver restricao de capacidade.
 3. Thresholds iniciais dos alertas operacionais.
+
+## 11. Log de execucao
+- 2026-02-09:
+  - Onda O1 quebrada em stories individuais.
+  - Artefatos criados em `Docs/Phases/04-PO-Sharding/Stories/O1/`.
+  - Status atual das stories O1: `ready_for_po_review`.
