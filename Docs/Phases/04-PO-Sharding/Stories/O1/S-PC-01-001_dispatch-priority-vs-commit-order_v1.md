@@ -7,9 +7,9 @@
 - Fonte consolidada (PC-P0-*): PC-P0-01
 - ADR relacionado: D-AR-001
 - Prioridade/Onda: P0 / O1
-- Owner: Backend Lead
+- Owner: Backend Lead (apoio: QA)
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: prioridade de despacho pode reordenar commit e gerar side-effect stale.
@@ -87,7 +87,7 @@
 4. Evidencia de log com `correlation_id`, `dispatch_priority`, `commit_order`.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: deteccao de `blocked_commit_order_violation` acima do baseline.
+- Trigger tecnico: `blocked_commit_order_violation` >= 3 em 15 min por clinica (warning) ou >= 10 em 15 min por clinica (critico).
 - Acao imediata: congelar side-effects do contato afetado e rerotear para revisao manual.
 - Owner on-call / superadmin: Backend on-call + superadmin.
 - Escalonamento: Platform em ate 15 min se padrao recorrente.
@@ -121,4 +121,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

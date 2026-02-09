@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O1
 - Owner: Backend + QA
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: duplicidade ou reexecucao tardia pode aplicar side-effect invalido.
@@ -33,7 +33,7 @@
 - [x] Secao 7 consolidacao (TTL e parametros operacionais aprovados)
 
 ## 5. Contrato funcional da story
-1. Evento de entrada: intento de side-effect (agendar/reagendar/cancelar/confirmação D-1).
+1. Evento de entrada: intento de side-effect (agendar/reagendar/cancelar/confirmacao D-1).
 2. Regras de processamento:
    - construir `idempotency_key` deterministica.
    - validar `version_guard` contra estado corrente.
@@ -88,11 +88,11 @@
 4. Evidencia de log com `idempotency_key`, `version_guard`, resultado terminal.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: aumento de `version_conflict_blocked` acima do baseline.
+- Trigger tecnico: `version_conflict_blocked > 2%` em 60 min ou `>= 8/h` (warning); `> 5%` em 60 min ou `>= 20/h` (critico).
 - Acao imediata: pausar side-effects da intent afetada e revisar origem de versao.
 - Owner on-call / superadmin: Backend on-call + QA lead.
 - Escalonamento: Product/Ops quando conflito impactar fila manual.
-- Criterio de retorno ao estado normal: conflitos abaixo do threshold e fila manual drenada.
+- Criterio de retorno ao estado normal: `version_conflict_blocked <= 2%` em 60 min e fila manual drenada.
 
 ## 11. Dependencias
 - Dependencias tecnicas: S-PC-01-002 concluida.
@@ -122,4 +122,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

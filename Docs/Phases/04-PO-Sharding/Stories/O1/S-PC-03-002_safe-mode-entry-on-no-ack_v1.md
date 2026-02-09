@@ -7,9 +7,9 @@
 - Fonte consolidada (PC-P0-*): PC-P0-03
 - ADR relacionado: D-AR-003, D-AR-004
 - Prioridade/Onda: P0 / O1
-- Owner: DevOps + Backend
+- Owner: DevOps + Backend (governanca: Superadmin)
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: sem ACK critico, o sistema pode continuar aplicando side-effects inseguros.
@@ -24,7 +24,7 @@
   - abertura de ticket critico para acao no proximo turno.
 - Out of scope:
   - criterio de saida de safe mode (O2 - S-PC-03-004).
-  - tuning de thresholds de alerta secundarios.
+  - tuning fino de thresholds apos periodo inicial de beta.
 
 ## 4. Regras congeladas aplicaveis
 - [ ] D-AR-001 commit causal por `contact_id`
@@ -93,7 +93,7 @@
 4. Mensagem padrao e ticket critico sao emitidos.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: `ack_timeout_15m`.
+- Trigger tecnico: `ack_timeout_15m` (hard). Warning se safe mode `> 20 min` ou fila de contingencia `> 50`; critico se safe mode `> 45 min`, fila `> 120` ou pendencia mais antiga `> 30 min`.
 - Acao imediata: confirmar ativacao do safe mode e comunicar operacao.
 - Owner on-call / superadmin: superadmin + DevOps on-call.
 - Escalonamento: incident commander se ativacao falhar.
@@ -127,4 +127,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

@@ -7,9 +7,9 @@
 - Fonte consolidada (PC-P0-*): PC-P0-03
 - ADR relacionado: D-AR-003, D-AR-004
 - Prioridade/Onda: P0 / O1
-- Owner: DevOps
+- Owner: Superadmin (apoio: DevOps)
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: alerta critico pode passar despercebido e deixar sistema em estado inseguro.
@@ -89,7 +89,7 @@
 4. Evidencia de log com `trigger_id`, canal, timestamp de envio, tentativa, ACK.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: `no_ack_critical_alert`.
+- Trigger tecnico: `no_ack_critical_alert` com limiares de ACK em 5 min (warning), 10 min (alto) e fail-safe em 15 min (critico).
 - Acao imediata: confirmar canais ativos e acompanhar tentativas.
 - Owner on-call / superadmin: superadmin.
 - Escalonamento: ao atingir 15 min sem ACK, acionar S-PC-03-002.
@@ -97,13 +97,13 @@
 
 ## 11. Dependencias
 - Dependencias tecnicas: nenhuma previa bloqueante.
-- Dependencias de produto/operacao: definicao final da matriz trigger/canal/owner/SLA.
+- Dependencias de produto/operacao: matriz trigger/canal/owner/SLA aprovada.
 - Ordem de execucao: primeira story da trilha PC-03.
 
 ## 12. Riscos residuais
 | Risco | Severidade | Mitigacao | Owner |
 |---|---|---|---|
-| Falha simultanea dos canais de alerta | critico | redundancia + fallback + ticket automatico | DevOps |
+| Falha simultanea dos canais de alerta | critico | redundancia + fallback + ticket automatico | Superadmin + DevOps |
 
 ## 13. Checklist DoR
 - [x] Fonte PC/ADR referenciada.
@@ -123,4 +123,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

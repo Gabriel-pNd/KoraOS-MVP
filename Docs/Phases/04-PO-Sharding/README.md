@@ -27,4 +27,4 @@ Guardrails congelados:
 
 Progresso atual:
 1. Onda O1 criada em stories individuais (S-PC-01-001..S-PC-03-002).
-2. Todas as stories O1 estao em `ready_for_po_review`.
+2. Todas as stories O1 estao em `ready_for_implementation` (owners e thresholds aprovados pelo PO).

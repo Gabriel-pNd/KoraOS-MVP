@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O1
 - Owner: Backend + Ops
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: resultados heterogeneos de replay dificultam operacao e auditoria.
@@ -89,11 +89,11 @@
 4. Evidencia de relatorio por status e `correlation_id`.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: crescimento de `expired_manual` ou `conflict_blocked` fora do baseline.
+- Trigger tecnico: backlog manual de replay `> 30` ou `p95 idade > 15 min` (warning); backlog `> 80` ou `p95 idade > 30 min` (critico).
 - Acao imediata: priorizar fila manual por criticidade de intent.
 - Owner on-call / superadmin: Ops lead + superadmin.
 - Escalonamento: Product para ajuste de regra se houver padrao recorrente.
-- Criterio de retorno ao estado normal: backlog manual dentro do limite do turno.
+- Criterio de retorno ao estado normal: backlog manual `<= 30` e `p95 idade <= 15 min`.
 
 ## 11. Dependencias
 - Dependencias tecnicas: S-PC-02-001 e S-PC-02-002 concluidas.
@@ -123,4 +123,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |
