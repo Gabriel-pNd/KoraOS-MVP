@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O2
 - Owner: Ops + Product
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: durante safe mode, usuarios podem ficar sem contexto e o time pode perder continuidade no proximo turno.
@@ -125,4 +125,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

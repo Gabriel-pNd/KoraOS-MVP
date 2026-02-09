@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O2
 - Owner: Platform
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: indisponibilidade de Redis pode quebrar lock e idempotencia em concorrencia.
@@ -125,4 +125,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |
