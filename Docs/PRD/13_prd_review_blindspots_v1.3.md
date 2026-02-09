@@ -624,3 +624,38 @@ Recomendação: **1+2** no gate técnico, com 3 no UAT de campo.
 ---
 
 **Status atual (v1.3)**: riscos críticos/altos/médios com trilha de decisão versionada; deferimentos e pendências técnicas explicitamente documentados.
+
+## 24. Decisão Complementar (Round 5) - Mitigação Mínima do Item 10
+
+### 24.1 Decisão confirmada pelo Product Owner
+
+- Item 10 -> A+B (versão mínima)
+- Sem exigência de equipe clínica 24/7
+
+### 24.2 Registro machine-friendly (Round 5)
+
+| ID | Risco | Decisão | Status |
+|---|---|---|---|
+| F4-10 | Alerta crítico sem ACK com owner único | A+B com ACK em 15 min + fail-safe | Resolvido com mitigação mínima |
+
+### 24.3 Deltas Normativos Aplicados
+
+### A. Alerta redundante para superadmin
+1. Reenvio automático a cada 5 minutos por 30 minutos via WhatsApp.
+2. ACK obrigatório pelo superadmin do tenant.
+
+### B. Fail-safe sem ACK em 15 minutos
+1. Entrar em modo seguro.
+2. Bloquear side-effects (`agendar`, `reagendar`, `cancelar`).
+3. Manter ingestão normal com enfileiramento de pendências.
+4. Enviar mensagem padrão de contingência.
+5. Abrir ticket crítico para ação no próximo turno.
+
+### 24.4 Changelog (v1.4)
+
+- 2026-02-09: adicionada mitigação mínima formal do item 10 (A+B) com SLA de ACK em 15 min.
+- 2026-02-09: formalizado fail-safe de modo seguro para ausência de ACK.
+
+---
+
+**Status atual (v1.4)**: riscos críticos/altos/médios com trilha de decisão versionada; item crítico de alerta sem ACK mitigado em baseline mínima.

@@ -2,8 +2,8 @@
 ## Product Requirements Document com Épicos e Stories Priorizados
 
 **Produto**: KoraOS MVP  
-**Versão do documento**: 1.4 (riscos médios + varredura Round 4)  
-**Data**: 2026-02-08  
+**Versão do documento**: 1.5 (mitigação mínima de alerta crítico + round 5)  
+**Data**: 2026-02-09  
 **Responsável**: PM (Morgan)  
 **Fonte de referência**: `Docs/Brainstorming/08_project_brief_v3.1_MASTER.md`, `Docs/Brainstorming/11_blind_spots_v3_consolidated.md`, anexos `08a`, `08b`, `08c`, `08d`
 
@@ -1178,4 +1178,46 @@ A varredura adicional solicitada (somente riscos crítico/alto) está registrada
 
 ---
 
-**Fim do PRD v1.4**
+## 25. Adendo de Mitigação Mínima para Alerta Crítico (v1.5)
+
+**Data**: 2026-02-09  
+**Origem**: decisão formal do PO na consolidação final da varredura crítica/alta.
+
+Este adendo aplica mitigação mínima para risco crítico de resposta a alertas sem ACK, sem exigir equipe clínica 24/7.
+
+## 25.1 Decisão Aprovada (Round 5)
+
+| ID | Tema | Decisão aplicada | Status |
+|---|---|---|---|
+| F4-10 | Alerta crítico sem ACK | A+B (versão mínima) | Resolvido com mitigação mínima |
+
+## 25.2 Política Normativa (trigger -> canal -> owner -> SLA de ACK)
+
+1. Trigger: alerta técnico crítico sem ACK do responsável.
+2. Canal: WhatsApp para superadmin, com reenvio redundante no mesmo canal.
+3. Owner: superadmin do tenant.
+4. SLA de ACK: 15 minutos.
+5. Reenvio automático: a cada 5 minutos por 30 minutos ou até ACK.
+
+## 25.3 Fail-safe Obrigatório (sem ACK em 15 min)
+
+1. Entrar em modo seguro.
+2. Bloquear side-effects (`agendar`, `reagendar`, `cancelar`).
+3. Manter ingestão normal e enfileirar pendências.
+4. Enviar mensagem padrão de contingência.
+5. Abrir ticket crítico para ação no próximo turno.
+
+## 25.4 Guardrails Operacionais
+
+1. Esta política não impõe equipe clínica 24/7.
+2. O atendimento humano continua conforme janela comercial definida por tenant.
+3. A saída do modo seguro exige ACK registrado e ação auditável.
+
+## 25.5 Rastreabilidade
+
+- Mitigação aplicada para desbloquear critério de avanço sem risco crítico descoberto e sem resposta definida.
+- Referência complementar: `docs/PRD/13_prd_review_blindspots_v1.3.md` (Round 5).
+
+---
+
+**Fim do PRD v1.5**
