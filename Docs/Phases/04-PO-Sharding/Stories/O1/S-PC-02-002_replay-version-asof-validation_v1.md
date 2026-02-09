@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O1
 - Owner: Backend
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: replay com estado antigo pode sobrescrever estado mais novo.
@@ -87,11 +87,11 @@
 4. Evidencia de logs com `expected_version`, `event_version`, `as_of`, `result`.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: aumento abrupto de `conflict_blocked`.
+- Trigger tecnico: `conflict_blocked > 2%` em 60 min (warning); `> 5%` em 60 min ou `> 20/h` (critico).
 - Acao imediata: revisar origem dos eventos e drift de versao.
 - Owner on-call / superadmin: Backend on-call.
 - Escalonamento: Product/Ops quando conflito impactar confirmacoes D-1.
-- Criterio de retorno ao estado normal: conflitos dentro do limite acordado e replay drenado.
+- Criterio de retorno ao estado normal: `conflict_blocked <= 2%` em 60 min e replay drenado.
 
 ## 11. Dependencias
 - Dependencias tecnicas: S-PC-02-001 concluida.
@@ -121,4 +121,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

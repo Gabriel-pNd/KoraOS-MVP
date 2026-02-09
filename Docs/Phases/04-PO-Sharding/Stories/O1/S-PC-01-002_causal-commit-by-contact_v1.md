@@ -7,9 +7,9 @@
 - Fonte consolidada (PC-P0-*): PC-P0-01
 - ADR relacionado: D-AR-001
 - Prioridade/Onda: P0 / O1
-- Owner: Backend Lead
+- Owner: Backend Lead (apoio: Platform)
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: concorrencia em intents do mesmo contato pode aplicar efeitos fora da sequencia real.
@@ -88,7 +88,7 @@
 4. Evidencia de log com `contact_id`, `commit_sequence`, `state`.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: fila `waiting_previous_commit` acima de threshold.
+- Trigger tecnico: `p95(waiting_previous_commit_age) > 2 min` por 10 min (warning) ou `p95 > 5 min` por 10 min / backlog `> 40` itens (critico).
 - Acao imediata: validar lock store e liberar itens presos por ordem invalida.
 - Owner on-call / superadmin: Backend on-call + Platform on-call.
 - Escalonamento: incident P1 se backlog de commit passar 10 min.
@@ -96,13 +96,13 @@
 
 ## 11. Dependencias
 - Dependencias tecnicas: S-PC-01-001 concluida.
-- Dependencias de produto/operacao: definicao de threshold inicial para backlog causal.
+- Dependencias de produto/operacao: threshold aprovado para backlog causal.
 - Ordem de execucao: segunda story da trilha PC-01.
 
 ## 12. Riscos residuais
 | Risco | Severidade | Mitigacao | Owner |
 |---|---|---|---|
-| Crescimento de fila por contato em bursts | alto | threshold + alerta + fila manual de excecao | Backend Lead |
+| Crescimento de fila por contato em bursts | alto | warning em p95 > 2 min; critico em p95 > 5 min ou backlog > 40 | Backend Lead |
 
 ## 13. Checklist DoR
 - [x] Fonte PC/ADR referenciada.
@@ -122,4 +122,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

@@ -16,5 +16,5 @@ Stories da Onda 1 derivadas do plano de sharding:
 8. `Docs/Phases/04-PO-Sharding/Stories/O1/S-PC-03-002_safe-mode-entry-on-no-ack_v1.md`
 
 ## Status
-- Estado: draft criado para revisao do PO.
-- Proximo passo: aprovar owners finais e thresholds operacionais para liberar `ready_for_implementation`.
+- Estado: aprovado pelo PO e pronto para implementacao.
+- Proximo passo: iniciar O2 e manter O1 com rastreabilidade de execucao/DoD.

@@ -7,9 +7,9 @@
 - Fonte consolidada (PC-P0-*): PC-P0-02
 - ADR relacionado: D-AR-002
 - Prioridade/Onda: P0 / O1
-- Owner: Backend
+- Owner: Backend (apoio: Ops)
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: replay tardio pode executar efeito fora de contexto.
@@ -90,11 +90,11 @@
 4. Logs com `intent`, `event_age`, `ttl_limit`, `result`.
 
 ## 10. Runbook e resposta a incidente
-- Trigger tecnico: taxa de `expired_manual` acima do baseline esperado.
+- Trigger tecnico: `expired_manual > 3%` em 60 min (warning); `> 8%` em 60 min ou `> 30/h` (critico).
 - Acao imediata: verificar delay de fila e gargalo de processamento.
 - Owner on-call / superadmin: Backend on-call + Ops.
 - Escalonamento: Platform se backlog de replay nao drenar.
-- Criterio de retorno ao estado normal: replay validado dentro de TTL e fila de expirados estabilizada.
+- Criterio de retorno ao estado normal: `expired_manual <= 3%` em 60 min e fila de expirados estabilizada.
 
 ## 11. Dependencias
 - Dependencias tecnicas: S-PC-01-003 concluida.
@@ -124,4 +124,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |

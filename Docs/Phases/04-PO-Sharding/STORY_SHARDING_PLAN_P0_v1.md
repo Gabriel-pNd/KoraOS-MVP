@@ -42,14 +42,14 @@ Saida desta fase:
 ## 6. Backlog shard P0 (executavel)
 | Story ID | Fonte | Titulo | Owner sugerido | DoR minimo | Dependencias | Onda |
 |---|---|---|---|---|---|---|
-| S-PC-01-001 | PC-P0-01 | Separar `dispatch_priority` de `commit_order` no fluxo de fila | Backend Lead | contrato de fila fechado + campos definidos + eventos de teste mapeados | nenhuma | O1 |
-| S-PC-01-002 | PC-P0-01 | Garantir commit sequencial por `contact_id` em concorrencia | Backend Lead | estrategia de lock/version definida + casos de corrida listados | S-PC-01-001 | O1 |
+| S-PC-01-001 | PC-P0-01 | Separar `dispatch_priority` de `commit_order` no fluxo de fila | Backend Lead (apoio: QA) | contrato de fila fechado + campos definidos + eventos de teste mapeados | nenhuma | O1 |
+| S-PC-01-002 | PC-P0-01 | Garantir commit sequencial por `contact_id` em concorrencia | Backend Lead (apoio: Platform) | estrategia de lock/version definida + casos de corrida listados | S-PC-01-001 | O1 |
 | S-PC-01-003 | PC-P0-01 | Padronizar idempotencia e `version_guard` nos side-effects | Backend + QA | idempotency key definida + matriz de conflitos pronta | S-PC-01-002 | O1 |
-| S-PC-02-001 | PC-P0-02 | Validar TTL por intent antes de replay | Backend | tabela de TTL aprovada na story + regra de expiracao definida | S-PC-01-003 | O1 |
+| S-PC-02-001 | PC-P0-02 | Validar TTL por intent antes de replay | Backend (apoio: Ops) | tabela de TTL aprovada na story + regra de expiracao definida | S-PC-01-003 | O1 |
 | S-PC-02-002 | PC-P0-02 | Revalidar versao/as_of antes de replay | Backend | regra de comparacao de versao documentada | S-PC-02-001 | O1 |
 | S-PC-02-003 | PC-P0-02 | Resultados terminais de replay (`replayed`, `expired_manual`, `conflict_blocked`) | Backend + Ops | contrato de status e fila manual definidos | S-PC-02-002 | O1 |
-| S-PC-03-001 | PC-P0-03 | Pipeline de alerta critico sem ACK (superadmin redundante + retry WhatsApp 5/5 min por 30 min) | DevOps | matriz trigger->canal->owner->SLA de ACK aprovada | nenhuma | O1 |
-| S-PC-03-002 | PC-P0-03 | Entrada em safe mode em 15 min sem ACK com politicas de bloqueio/enfileiramento | DevOps + Backend | politicas de side-effect bloqueado e fila de pendencias documentadas | S-PC-03-001 | O1 |
+| S-PC-03-001 | PC-P0-03 | Pipeline de alerta critico sem ACK (superadmin redundante + retry WhatsApp 5/5 min por 30 min) | Superadmin (apoio: DevOps) | matriz trigger->canal->owner->SLA de ACK aprovada | nenhuma | O1 |
+| S-PC-03-002 | PC-P0-03 | Entrada em safe mode em 15 min sem ACK com politicas de bloqueio/enfileiramento | DevOps + Backend (governanca: Superadmin) | politicas de side-effect bloqueado e fila de pendencias documentadas | S-PC-03-001 | O1 |
 | S-PC-03-003 | PC-P0-03 | Mensagem padrao de contingencia e ticket critico para proximo turno | Ops + Product | texto padrao aprovado + rota de ticket definida | S-PC-03-002 | O2 |
 | S-PC-03-004 | PC-P0-03 | Saida do safe mode com ACK + recovery action + 10 min health green | DevOps + Ops | checklist de recovery e health checks fechados | S-PC-03-002 | O2 |
 | S-PC-04-001 | PC-P0-04 | Logs estruturados com `correlation_id` fim a fim (F-01..F-06) | SRE | esquema minimo de logs e campos obrigatorios definidos | nenhuma | O2 |
@@ -76,13 +76,14 @@ Saida desta fase:
 3. Template de story aplicado sem excecao nas stories O1/O2/O3.
 4. Item deferido S-PC-P1-001 visivel com trigger ativo no backlog.
 
-## 10. Aprovacoes pendentes nesta fase
-1. Nomeacao final dos owners por story.
-2. Priorizacao final por onda (O1/O2/O3) se houver restricao de capacidade.
-3. Thresholds iniciais dos alertas operacionais.
+## 10. Status de aprovacoes nesta fase
+1. O1: owners finais e thresholds operacionais aprovados pelo PO.
+2. Pendente: priorizacao final O2/O3 se houver restricao de capacidade.
+3. Pendente: thresholds iniciais de alertas operacionais para O2/O3.
 
 ## 11. Log de execucao
 - 2026-02-09:
   - Onda O1 quebrada em stories individuais.
   - Artefatos criados em `Docs/Phases/04-PO-Sharding/Stories/O1/`.
-  - Status atual das stories O1: `ready_for_po_review`.
+  - PO aprovou owners finais + thresholds operacionais da O1.
+  - Status atual das stories O1: `ready_for_implementation`.
