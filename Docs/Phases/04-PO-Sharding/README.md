@@ -5,3 +5,6 @@ Objetivo:
 
 Saida esperada:
 - Stories com DoR prontos para implementacao.
+
+Status:
+- Ready to start
