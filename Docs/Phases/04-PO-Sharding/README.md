@@ -7,7 +7,7 @@ Saida esperada:
 - Stories P0 prontas para implementacao na Fase 05, com CA delta e rastreabilidade ADR/PRD.
 
 Status:
-- In progress (v1 draft)
+- Concluida (v1, aprovada pelo PO)
 
 Entradas obrigatorias:
 - `Docs/Phases/03-Product-Consolidation/PRODUCT_CONSOLIDATION_BACKLOG_P0_v1.md`
@@ -31,4 +31,5 @@ Progresso atual:
 1. Onda O1 criada em stories individuais (S-PC-01-001..S-PC-03-002).
 2. Todas as stories O1 estao em `ready_for_implementation` (owners e thresholds aprovados pelo PO).
 3. Onda O2 criada em stories individuais (S-PC-03-003..S-PC-05-001) em `ready_for_implementation` (owners e thresholds aprovados pelo PO).
-4. Onda O3 criada em stories individuais (S-PC-04-003..S-PC-05-002) em `ready_for_po_review`.
+4. Onda O3 criada em stories individuais (S-PC-04-003..S-PC-05-002) em `ready_for_implementation` (owners e thresholds aprovados pelo PO).
+5. Fase 04 pronta para handoff de execucao para a Fase 05 (Implementation).

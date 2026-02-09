@@ -79,8 +79,8 @@ Saida desta fase:
 ## 10. Status de aprovacoes nesta fase
 1. O1: owners finais e thresholds operacionais aprovados pelo PO.
 2. O2: owners finais e thresholds operacionais aprovados pelo PO.
-3. O3: stories criadas em `ready_for_po_review` com owners sugeridos e thresholds propostos.
-4. Pendente: aprovacao final do PO para owners e thresholds da O3.
+3. O3: owners finais e thresholds operacionais aprovados pelo PO.
+4. Resultado: todas as stories P0 (O1/O2/O3) estao em `ready_for_implementation`.
 
 ## 11. Log de execucao
 - 2026-02-09:
@@ -94,4 +94,6 @@ Saida desta fase:
   - Status atual das stories O2: `ready_for_implementation`.
   - Onda O3 quebrada em stories individuais.
   - Artefatos criados em `Docs/Phases/04-PO-Sharding/Stories/O3/`.
-  - Status atual das stories O3: `ready_for_po_review`.
+  - PO aprovou owners finais + thresholds operacionais da O3.
+  - Status atual das stories O3: `ready_for_implementation`.
+  - Fase 04 concluida e pronta para handoff da Fase 05.

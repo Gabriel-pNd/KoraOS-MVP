@@ -9,7 +9,7 @@
 - Prioridade/Onda: P0 / O3
 - Owner: SRE + QA
 - Data: 2026-02-09
-- Status: ready_for_po_review
+- Status: ready_for_implementation
 
 ## 2. Objetivo da story
 - Problema que a story resolve: sem pacote de evidencia padronizado, auditoria e triagem de incidentes ficam lentas e subjetivas.
@@ -124,4 +124,4 @@
 ## 15. Approval Log
 | Data | Aprovador | Resultado | Observacao |
 |---|---|---|---|
-|  |  |  |  |
+| 2026-02-09 | PO | aprovado | owner final e thresholds operacionais aprovados |
