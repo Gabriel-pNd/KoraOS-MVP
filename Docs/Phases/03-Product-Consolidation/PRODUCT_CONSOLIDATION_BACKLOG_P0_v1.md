@@ -75,13 +75,15 @@ Saida desta fase:
    - takeover SLA breach
    - replay backlog sem drenagem
 
-## 7. Parametros operacionais para fechamento nesta fase
-Itens para confirmacao final na consolidacao (antes do sharding):
+## 7. Parametros operacionais aprovados para fechamento desta fase
+Status de aprovacao:
+- Aprovado pelo PO em 2026-02-09.
+
 1. TTL default por intent:
-   - schedule/reschedule/cancel = 120 min (proposto)
-   - D-1 confirmation action = ate appointment_start - 30 min (proposto)
-   - follow-up nao transacional = 24h (proposto)
-2. Janela de estabilizacao para sair do safe mode: 10 min de health checks verdes (proposto).
+   - schedule/reschedule/cancel = 120 min
+   - D-1 confirmation action = ate appointment_start - 30 min
+   - follow-up nao transacional = 24h
+2. Janela de estabilizacao para sair do safe mode: 10 min de health checks verdes.
 3. Trigger de reabertura do risco N8N HA:
    - >= 2 incidentes P0 de orquestracao em 14 dias, ou
    - replay backlog critico recorrente por 3 dias consecutivos.
@@ -99,6 +101,17 @@ Checklist:
 3. Deltas de CA incorporados como padrao de escrita de stories.
 4. Parametros operacionais (secao 7) definidos ou registrados como pendencia formal.
 
+Status atual (2026-02-09):
+1. PC-P0-01..PC-P0-05 = `approved_for_sharding`.
+2. PC-P1-01 = `deferred_with_trigger`.
+3. Deltas de CA = aprovados para template de story.
+4. Parametros operacionais da secao 7 = aprovados.
+
 ## 10. Proximos artefatos recomendados
 1. `Docs/Phases/04-PO-Sharding/STORY_SHARDING_PLAN_P0_v1.md`
 2. `Docs/Phases/04-PO-Sharding/STORY_TEMPLATE_P0_DELTA_v1.md`
+
+## 11. Approval Log
+| Date | Approver | Scope | Result |
+|---|---|---|---|
+| 2026-02-09 | PO | Secao 7 (TTL, safe mode window, trigger N8N HA) | All approved |
