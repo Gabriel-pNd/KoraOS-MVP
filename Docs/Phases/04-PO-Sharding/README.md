@@ -19,6 +19,7 @@ Artefatos:
 - `Docs/Phases/04-PO-Sharding/STORY_SHARDING_PLAN_P0_v1.md`
 - `Docs/Phases/04-PO-Sharding/STORY_TEMPLATE_P0_DELTA_v1.md`
 - `Docs/Phases/04-PO-Sharding/Stories/O1/README.md`
+- `Docs/Phases/04-PO-Sharding/Stories/O2/README.md`
 
 Guardrails congelados:
 1. Nao reabrir D-AR-001..D-AR-007 sem decisao formal do PO.
@@ -28,3 +29,4 @@ Guardrails congelados:
 Progresso atual:
 1. Onda O1 criada em stories individuais (S-PC-01-001..S-PC-03-002).
 2. Todas as stories O1 estao em `ready_for_implementation` (owners e thresholds aprovados pelo PO).
+3. Onda O2 criada em stories individuais (S-PC-03-003..S-PC-05-001) em `ready_for_po_review`.
