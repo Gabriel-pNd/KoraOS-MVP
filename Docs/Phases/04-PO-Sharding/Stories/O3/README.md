@@ -10,5 +10,5 @@ Stories da Onda 3 derivadas do plano de sharding:
 2. `Docs/Phases/04-PO-Sharding/Stories/O3/S-PC-05-002_redis-failure-drill-controlled-continuity_v1.md`
 
 ## Status
-- Estado: draft criado para revisao do PO.
-- Proximo passo: aprovar owners finais e thresholds operacionais da O3 para liberar `ready_for_implementation`.
+- Estado: aprovado pelo PO e pronto para implementacao.
+- Proximo passo: consolidar handoff da Fase 04 para inicio da Fase 05 (Implementation).
