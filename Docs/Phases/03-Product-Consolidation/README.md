@@ -5,3 +5,6 @@ Objetivo:
 
 Saida esperada:
 - Backlog estabilizado para sharding.
+
+Status:
+- Ready to start
