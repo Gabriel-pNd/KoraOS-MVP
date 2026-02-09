@@ -7,7 +7,7 @@ Saida esperada:
 - Definicoes tecnicas prontas para consolidacao de produto.
 
 Status:
-- In progress (v1)
+- Concluida (v1, aprovada pelo PO)
 
 Artefatos:
 - `Docs/Phases/02-Architecture/ARCHITECTURE_P0_CONTRACTS_v1.md`

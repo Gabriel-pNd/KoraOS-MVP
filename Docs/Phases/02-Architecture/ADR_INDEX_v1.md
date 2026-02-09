@@ -28,3 +28,8 @@ Reference source:
 2. Confirm tenant-config defaults for replay TTL by intent.
 3. Define stabilization window duration to exit safe mode.
 4. Define rollout plan for deferred N8N HA/scaling risk after beta.
+
+## 5. Approval Log
+| Date | Approver | Scope | Result |
+|---|---|---|---|
+| 2026-02-09 | PO | D-AR-001..D-AR-007 | All approved |
