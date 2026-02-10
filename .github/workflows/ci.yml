@@ -39,3 +39,14 @@ jobs:
           test -f .github/PULL_REQUEST_TEMPLATE.md
           test -f .github/ISSUE_TEMPLATE/bug_report.md
           test -f .github/ISSUE_TEMPLATE/feature_request.md
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run test suite (O1/O2/O3 + runtime)
+        run: npm test
+
+      - name: Run runtime smoke test
+        run: npm run smoke:runtime

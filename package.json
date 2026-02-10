@@ -1,0 +1,15 @@
+{
+  "name": "koraos-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "KoraOS MVP runtime and domain contracts",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/runtime/server.js",
+    "test": "node --test tests/o1/*.test.js tests/o2/*.test.js tests/o3/*.test.js tests/runtime/*.test.js",
+    "smoke:runtime": "node scripts/smoke/runtime-smoke.js"
+  }
+}
