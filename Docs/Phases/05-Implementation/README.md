@@ -30,6 +30,8 @@ Artefatos:
 - `Docs/Phases/05-Implementation/O1_CYCLE-03_STATUS_v1.md`
 - `Docs/Phases/05-Implementation/O2_CYCLE-01_STATUS_v1.md`
 - `Docs/Phases/05-Implementation/O3_CYCLE-01_STATUS_v1.md`
+- `Docs/Phases/05-Implementation/RUNTIME_DEPLOY_INTEGRATION_TRACK_v1.md`
+- `Docs/Phases/05-Implementation/RUNTIME_DEPLOY_STATUS_CYCLE-01_v1.md`
 
 Guardrails:
 1. Nao reabrir D-AR-001..D-AR-007 sem decisao formal.
